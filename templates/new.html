@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Create New Leave.</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" src="/static/bootstrap.min.css">
+        <script src="/static/bootstrap.min.js"></script>
+        <style>
+            @import url("http://fonts.googleapis.com/css?family=Heebo:400,300,700");
+            body {
+             font-family: 'Heebo', sans-serif !important;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#">Leave Management System</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+              	<li><a href="#"><span class="glyphicon glyphicon-user"></span> Create Leave</a></li>
+            </div>
+          </nav>
+
+        <div class="container-fluid" style="margin-top: 90px; padding-right: 50px; padding-left: 30px;">
+            <div class="row">
+               <div class="col-md-12 well">
+                    <h2>Create Leave</h2>
+
+                    <div class="signup-form">
+                        <form action="{{ url_for('new')}}" method="POST">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-xs-3"><input type="text" class="form-control" name="fname" placeholder="First Name" required></div>
+                                    <div class="col-xs-3"><input type="text" class="form-control" name="lname" placeholder="Last Name"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+				<div class="form-check">
+                                <div class="row">
+                                    <div class="col-xs-3"><input type="text" class="form-control" name="desn" placeholder="Designation" required></div>
+                                    <div class="col-md-2"><h4>Type of Leave : </h4></div>
+                                    <div class="col-md-2">
+                                        <input class="form-check-input" type="radio" id="pl" name="type" value="pl">
+                                        <label class="form-check-label" for="pl">Personal Leave</label>
+                                    </div>
+                                    
+				    <div class="col-md-2">
+                                        <input class="form-check-input" type="radio" id="cl" name="type" value="cl">
+                                        <label class="form-check-label" for="cl">Casual Leave</label>
+                                    </div>
+				    
+				    <div class="col-md-2">
+                                        <input class="form-check-input" type="radio" id="sl" name="type" value="sl">
+                                        <label class="form-check-label" for="sl">Sick Leave</label>
+                                    </div>
+                                </div>
+                            </div>                            
+				<div class="row">
+                                        <div class="col-xs-6"><input type="text" class="form-control" name="mail" placeholder="Enter your mail here..." required></div>
+				</div><hr>
+			
+				<div class="row">
+                                        <div class="col-xs-3"><input type="date" class="form-control" name="from" placeholder="From date" required></div>
+					<div class="col-xs-3"><input type="date" class="form-control" name="till" placeholder="Till Date" required></div>
+				
+
+				</div><hr>
+
+                                <div class="row">
+                                      <div class="col-xs-12"><textarea type="text" class="form-control" name="remarks" placeholder="Any Remarks"></textarea></div>
+                                  </div><hr>
+				</div>
+                                </div>
+                            
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <button type="submit" class="btn btn-danger">Send</button>
+                                    <a class="btn btn-default" href="/">exit</a></div></div>
+	                        </div>
+        	            </div>
+            </div>
+        </form>
+    </body>
+</html>
