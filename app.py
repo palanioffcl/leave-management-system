@@ -1,6 +1,4 @@
-from multiprocessing import set_start_method
-from multiprocessing.forkserver import connect_to_new_process
-from flask import Flask,render_template,request,session,redirect,url_for
+from flask import Flask,render_template,request,redirect,url_for
 import sqlite3
 
 con=sqlite3.connect("lms.db")
